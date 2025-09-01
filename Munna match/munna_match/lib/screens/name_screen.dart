@@ -29,10 +29,12 @@ class _NameScreenState extends State<NameScreen> {
           children: [
             const SizedBox(height: 30),
 
-            // Image on top
+            // Bigger Image on top
             Image.asset(
-              "assets/images/user.png", // apna image path yaha dena
-              height: 120,
+              "assets/images/user.png", // your image path
+              height: 180,
+              width: 180,
+              fit: BoxFit.contain,
             ),
 
             const SizedBox(height: 20),
@@ -78,7 +80,7 @@ class _NameScreenState extends State<NameScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // Abhi navigation hataya gaya hai
+                    // Navigation is removed for now
                   },
                   child: const Text(
                     "Continue",
