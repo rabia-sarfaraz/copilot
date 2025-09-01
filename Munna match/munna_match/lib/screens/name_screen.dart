@@ -32,8 +32,8 @@ class _NameScreenState extends State<NameScreen> {
             // Bigger Image on top
             Image.asset(
               "assets/images/user.png", // your image path
-              height: 220,
-              width: 220,
+              height: 250,
+              width: 250,
               fit: BoxFit.contain,
             ),
 
