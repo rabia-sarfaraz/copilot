@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'name_screen.dart'; // NameScreen import kiya
 
 class GenderScreen extends StatelessWidget {
   const GenderScreen({super.key});
@@ -50,11 +51,22 @@ class GenderScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      "I am a man",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const NameScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "I am a man",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ],
@@ -69,11 +81,22 @@ class GenderScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      "I am a woman",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const NameScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "I am a woman",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ],

@@ -5,6 +5,7 @@ import 'screens/sign_up_screen.dart';
 import 'screens/verification_screen.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/gender_screen.dart';
+import 'screens/name_screen.dart';
 
 void main() {
   runApp(const MunnaMatchApp());
@@ -27,6 +28,7 @@ class MunnaMatchApp extends StatelessWidget {
         '/verification': (context) => const VerificationScreen(),
         '/welcome': (context) => const WelcomeScreen(),
         '/gender': (context) => const GenderScreen(),
+        '/name': (context) => const NameScreen(),
       },
     );
   }
