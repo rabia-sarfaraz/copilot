@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bday_screen.dart'; // ✅ Import your BdayScreen file
 
 class NameScreen extends StatefulWidget {
   const NameScreen({super.key});
@@ -32,8 +33,8 @@ class _NameScreenState extends State<NameScreen> {
             // Bigger Image on top
             Image.asset(
               "assets/images/user.png", // your image path
-              height: 250,
-              width: 250,
+              height: 260, // slightly bigger
+              width: 260,
               fit: BoxFit.contain,
             ),
 
@@ -80,7 +81,13 @@ class _NameScreenState extends State<NameScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // Navigation is removed for now
+                    // ✅ Navigate to BdayScreen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BdayScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
                     "Continue",
