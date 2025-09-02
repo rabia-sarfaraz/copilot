@@ -62,8 +62,8 @@ class _BdayScreenState extends State<BdayScreen> {
             Center(
               child: Image.asset(
                 "assets/images/user1.png",
-                height: 250, // increased from 200
-                width: 250, // increased from 200
+                height: 300, // increased more
+                width: 300, // increased more
                 fit: BoxFit.contain,
               ),
             ),
@@ -85,130 +85,104 @@ class _BdayScreenState extends State<BdayScreen> {
 
             const SizedBox(height: 20),
 
-            // Pickers
+            // Pickers with full bar highlight
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Stack(
                 children: [
-                  Expanded(
-                    child: CupertinoPicker(
-                      scrollController: FixedExtentScrollController(
-                        initialItem: days.indexOf(selectedDay),
-                      ),
-                      itemExtent: 40,
-                      selectionOverlay: Container(
-                        decoration: BoxDecoration(
-                          border: Border(
-                            top: BorderSide(
-                              color: const Color(0xFFFF6F61), // button color
-                              width: 2,
-                            ),
-                            bottom: BorderSide(
-                              color: const Color(0xFFFF6F61), // button color
-                              width: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      onSelectedItemChanged: (index) {
-                        setState(() {
-                          selectedDay = days[index];
-                        });
-                      },
-                      children: days
-                          .map(
-                            (d) => Center(
-                              child: Text(
-                                d.toString(),
-                                style: TextStyle(
-                                  color: Colors.grey, // all grey now
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
+                  // Colored bar across pickers
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      height: 40,
+                      color: const Color(0xFFFF6F61),
                     ),
                   ),
-                  Expanded(
-                    child: CupertinoPicker(
-                      scrollController: FixedExtentScrollController(
-                        initialItem: months.indexOf(selectedMonth),
-                      ),
-                      itemExtent: 40,
-                      selectionOverlay: Container(
-                        decoration: BoxDecoration(
-                          border: Border(
-                            top: BorderSide(
-                              color: const Color(0xFFFF6F61), // button color
-                              width: 2,
-                            ),
-                            bottom: BorderSide(
-                              color: const Color(0xFFFF6F61), // button color
-                              width: 2,
-                            ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: CupertinoPicker(
+                          scrollController: FixedExtentScrollController(
+                            initialItem: days.indexOf(selectedDay),
                           ),
+                          itemExtent: 40,
+                          selectionOverlay:
+                              Container(), // removed default lines
+                          onSelectedItemChanged: (index) {
+                            setState(() {
+                              selectedDay = days[index];
+                            });
+                          },
+                          children: days
+                              .map(
+                                (d) => Center(
+                                  child: Text(
+                                    d.toString(),
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
                         ),
                       ),
-                      onSelectedItemChanged: (index) {
-                        setState(() {
-                          selectedMonth = months[index];
-                        });
-                      },
-                      children: months
-                          .map(
-                            (m) => Center(
-                              child: Text(
-                                m,
-                                style: TextStyle(
-                                  color: Colors.grey, // all grey now
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                  ),
-                  Expanded(
-                    child: CupertinoPicker(
-                      scrollController: FixedExtentScrollController(
-                        initialItem: 0,
-                      ),
-                      itemExtent: 40,
-                      selectionOverlay: Container(
-                        decoration: BoxDecoration(
-                          border: Border(
-                            top: BorderSide(
-                              color: const Color(0xFFFF6F61), // button color
-                              width: 2,
-                            ),
-                            bottom: BorderSide(
-                              color: const Color(0xFFFF6F61), // button color
-                              width: 2,
-                            ),
+                      Expanded(
+                        child: CupertinoPicker(
+                          scrollController: FixedExtentScrollController(
+                            initialItem: months.indexOf(selectedMonth),
                           ),
+                          itemExtent: 40,
+                          selectionOverlay: Container(),
+                          onSelectedItemChanged: (index) {
+                            setState(() {
+                              selectedMonth = months[index];
+                            });
+                          },
+                          children: months
+                              .map(
+                                (m) => Center(
+                                  child: Text(
+                                    m,
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
                         ),
                       ),
-                      onSelectedItemChanged: (index) {
-                        setState(() {
-                          selectedYear = years[index];
-                        });
-                      },
-                      children: years
-                          .map(
-                            (y) => Center(
-                              child: Text(
-                                y.toString(),
-                                style: TextStyle(
-                                  color: Colors.grey, // all grey now
-                                  fontSize: 18,
+                      Expanded(
+                        child: CupertinoPicker(
+                          scrollController: FixedExtentScrollController(
+                            initialItem: 0,
+                          ),
+                          itemExtent: 40,
+                          selectionOverlay: Container(),
+                          onSelectedItemChanged: (index) {
+                            setState(() {
+                              selectedYear = years[index];
+                            });
+                          },
+                          children: years
+                              .map(
+                                (y) => Center(
+                                  child: Text(
+                                    y.toString(),
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 18,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
+                              )
+                              .toList(),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
