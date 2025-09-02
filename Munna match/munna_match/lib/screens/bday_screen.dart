@@ -62,8 +62,8 @@ class _BdayScreenState extends State<BdayScreen> {
             Center(
               child: Image.asset(
                 "assets/images/user1.png",
-                height: 300, // increased from 250
-                width: 300, // increased from 250
+                height: 350, // bigger size
+                width: 350,
                 fit: BoxFit.contain,
               ),
             ),
@@ -97,9 +97,7 @@ class _BdayScreenState extends State<BdayScreen> {
                       ),
                       itemExtent: 40,
                       selectionOverlay: Container(
-                        color: const Color(
-                          0xFFFF6F61,
-                        ).withOpacity(0.9), // full bar
+                        color: const Color(0xFFFF6F61).withOpacity(0.9),
                       ),
                       onSelectedItemChanged: (index) {
                         setState(() {
@@ -111,8 +109,10 @@ class _BdayScreenState extends State<BdayScreen> {
                             (d) => Center(
                               child: Text(
                                 d.toString(),
-                                style: const TextStyle(
-                                  color: Colors.grey,
+                                style: TextStyle(
+                                  color: d == selectedDay
+                                      ? Colors.white
+                                      : Colors.grey,
                                   fontSize: 18,
                                 ),
                               ),
@@ -128,9 +128,7 @@ class _BdayScreenState extends State<BdayScreen> {
                       ),
                       itemExtent: 40,
                       selectionOverlay: Container(
-                        color: const Color(
-                          0xFFFF6F61,
-                        ).withOpacity(0.9), // full bar
+                        color: const Color(0xFFFF6F61).withOpacity(0.9),
                       ),
                       onSelectedItemChanged: (index) {
                         setState(() {
@@ -142,8 +140,10 @@ class _BdayScreenState extends State<BdayScreen> {
                             (m) => Center(
                               child: Text(
                                 m,
-                                style: const TextStyle(
-                                  color: Colors.grey,
+                                style: TextStyle(
+                                  color: m == selectedMonth
+                                      ? Colors.white
+                                      : Colors.grey,
                                   fontSize: 18,
                                 ),
                               ),
@@ -159,9 +159,7 @@ class _BdayScreenState extends State<BdayScreen> {
                       ),
                       itemExtent: 40,
                       selectionOverlay: Container(
-                        color: const Color(
-                          0xFFFF6F61,
-                        ).withOpacity(0.9), // full bar
+                        color: const Color(0xFFFF6F61).withOpacity(0.9),
                       ),
                       onSelectedItemChanged: (index) {
                         setState(() {
@@ -173,8 +171,10 @@ class _BdayScreenState extends State<BdayScreen> {
                             (y) => Center(
                               child: Text(
                                 y.toString(),
-                                style: const TextStyle(
-                                  color: Colors.grey,
+                                style: TextStyle(
+                                  color: y == selectedYear
+                                      ? Colors.white
+                                      : Colors.grey,
                                   fontSize: 18,
                                 ),
                               ),
@@ -211,7 +211,7 @@ class _BdayScreenState extends State<BdayScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // No navigation yet
+                    // Navigation will go here
                   },
                   child: const Text(
                     'Continue',
