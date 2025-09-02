@@ -58,12 +58,12 @@ class _BdayScreenState extends State<BdayScreen> {
           children: [
             const SizedBox(height: 24),
 
-            // Top Image
+            // Top Image (Bigger now)
             Center(
               child: Image.asset(
                 "assets/images/user1.png",
-                height: 200,
-                width: 200,
+                height: 250, // increased from 200
+                width: 250, // increased from 200
                 fit: BoxFit.contain,
               ),
             ),
@@ -96,6 +96,20 @@ class _BdayScreenState extends State<BdayScreen> {
                         initialItem: days.indexOf(selectedDay),
                       ),
                       itemExtent: 40,
+                      selectionOverlay: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              color: const Color(0xFFFF6F61), // button color
+                              width: 2,
+                            ),
+                            bottom: BorderSide(
+                              color: const Color(0xFFFF6F61), // button color
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
                       onSelectedItemChanged: (index) {
                         setState(() {
                           selectedDay = days[index];
@@ -107,9 +121,7 @@ class _BdayScreenState extends State<BdayScreen> {
                               child: Text(
                                 d.toString(),
                                 style: TextStyle(
-                                  color: d == selectedDay
-                                      ? Colors.black
-                                      : Colors.orange,
+                                  color: Colors.grey, // all grey now
                                   fontSize: 18,
                                 ),
                               ),
@@ -124,6 +136,20 @@ class _BdayScreenState extends State<BdayScreen> {
                         initialItem: months.indexOf(selectedMonth),
                       ),
                       itemExtent: 40,
+                      selectionOverlay: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              color: const Color(0xFFFF6F61), // button color
+                              width: 2,
+                            ),
+                            bottom: BorderSide(
+                              color: const Color(0xFFFF6F61), // button color
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
                       onSelectedItemChanged: (index) {
                         setState(() {
                           selectedMonth = months[index];
@@ -135,9 +161,7 @@ class _BdayScreenState extends State<BdayScreen> {
                               child: Text(
                                 m,
                                 style: TextStyle(
-                                  color: m == selectedMonth
-                                      ? Colors.black
-                                      : Colors.orange,
+                                  color: Colors.grey, // all grey now
                                   fontSize: 18,
                                 ),
                               ),
@@ -152,6 +176,20 @@ class _BdayScreenState extends State<BdayScreen> {
                         initialItem: 0,
                       ),
                       itemExtent: 40,
+                      selectionOverlay: Container(
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              color: const Color(0xFFFF6F61), // button color
+                              width: 2,
+                            ),
+                            bottom: BorderSide(
+                              color: const Color(0xFFFF6F61), // button color
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                      ),
                       onSelectedItemChanged: (index) {
                         setState(() {
                           selectedYear = years[index];
@@ -163,9 +201,7 @@ class _BdayScreenState extends State<BdayScreen> {
                               child: Text(
                                 y.toString(),
                                 style: TextStyle(
-                                  color: y == selectedYear
-                                      ? Colors.black
-                                      : Colors.orange,
+                                  color: Colors.grey, // all grey now
                                   fontSize: 18,
                                 ),
                               ),
@@ -202,7 +238,7 @@ class _BdayScreenState extends State<BdayScreen> {
                     ),
                   ),
                   onPressed: () {
-                    // No navigation
+                    // No navigation yet
                   },
                   child: const Text(
                     'Continue',
