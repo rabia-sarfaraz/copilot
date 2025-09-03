@@ -43,7 +43,7 @@ class GetStartedScreen extends StatelessWidget {
                     "Muna Match",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 42, // increased from 36
+                      fontSize: 48, // increased more (was 42 before)
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5,
                     ),
