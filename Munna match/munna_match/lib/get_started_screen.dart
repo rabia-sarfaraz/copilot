@@ -43,10 +43,21 @@ class GetStartedScreen extends StatelessWidget {
                     "Muna Match",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 65, // slightly smaller than before
+                      fontSize: 65, // slightly smaller for balance
                       fontWeight: FontWeight.w900, // max bold
-                      letterSpacing:
-                          2, // slightly more spacing to enhance bold look
+                      letterSpacing: 2, // enhance bold look
+                      shadows: [
+                        Shadow(
+                          offset: Offset(2, 2),
+                          blurRadius: 2,
+                          color: Colors.black45,
+                        ),
+                        Shadow(
+                          offset: Offset(1, 1),
+                          blurRadius: 1,
+                          color: Colors.black38,
+                        ),
+                      ],
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -139,7 +150,7 @@ class GetStartedScreen extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        decoration: TextDecoration.underline, // optional
+                        decoration: TextDecoration.underline,
                       ),
                     ),
                   ),
