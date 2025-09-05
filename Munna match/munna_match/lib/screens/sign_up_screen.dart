@@ -32,7 +32,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             const Text(
               "What’s your email address?",
               style: TextStyle(
-                fontSize: 32, // chota kiya (pehle 36 tha)
+                fontSize: 28, // aur chota kiya (pehle 32 tha)
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -42,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             const Text(
               "We’ll email you a code to verify your identity",
               style: TextStyle(
-                fontSize: 22, // chota kiya (pehle 26 tha)
+                fontSize: 18, // aur chota kiya (pehle 22 tha)
                 color: Colors.black,
               ),
               textAlign: TextAlign.center,
