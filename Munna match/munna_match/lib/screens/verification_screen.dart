@@ -94,7 +94,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       ),
                       const Spacer(),
                       const Text(
-                        "Verification",
+                        "Verification Code", // 👈 heading updated
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w900,
@@ -105,7 +105,23 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       const SizedBox(width: 48),
                     ],
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Please Enter the 6-digit code sent to", // 👈 new line
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    "youremail@gmail.com", // 👈 bold line
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const SizedBox(height: 40),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: List.generate(6, (index) => buildCodeLine(index)),
