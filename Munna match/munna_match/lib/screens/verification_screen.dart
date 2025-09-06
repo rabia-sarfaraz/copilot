@@ -58,14 +58,35 @@ class _VerificationScreenState extends State<VerificationScreen> {
     );
   }
 
+  // 👇 Yahan change kiya hai: underline ke upar entered number bhi show hoga
   Widget buildCodeLine(int index) {
     bool isActive = currentIndex == index;
     bool isFilled = code[index].isNotEmpty;
     return Expanded(
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 4),
-        height: 2,
-        color: isActive || isFilled ? Colors.blue : Colors.black26,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: 40,
+              child: Center(
+                child: Text(
+                  code[index], // 👈 pressed number show karega
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black, // number ka color
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 2,
+              color: isActive || isFilled ? Colors.blue : Colors.black26,
+            ),
+          ],
+        ),
       ),
     );
   }
